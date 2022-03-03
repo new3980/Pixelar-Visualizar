@@ -6,8 +6,9 @@ import skimage
 from sklearn.cluster import KMeans
 from numpy import linalg as lin
 import numpy as np
-#this is desired image for being pixelated
-img = cv2.imread("D:\\GIT\\Pixelar-Visualizar\\opencv_pixel\\cassette.jpg")
+#this is desired image for being pixelated 120 65
+img = cv2.imread("D:\\GIT\\Pixelar-Visualizar\\opencv_pixel\\pistal.jpg")
+#img = cv2.imread("D:\\GIT\\Pixelar-Visualizar\\opencv_pixel\\cassette.jpg")
 rgb = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
 
 """
@@ -26,7 +27,7 @@ def pixelate(rgb,w,h):
     #return to original size
     return cv2.resize(shrink,(width,height), interpolation=cv2.INTER_NEAREST)
 
-pixel64 = pixelate(rgb,64,64)
+pixel64 = pixelate(rgb,120,65)
 pixel164rgb = cv2.cvtColor(pixel64,cv2.COLOR_BGR2RGB)
 
 plt.subplot(1,2,1)
